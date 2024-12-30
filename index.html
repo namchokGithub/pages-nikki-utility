@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Time Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assests/nikkicon.ico">
+</head>
+<body>
+    <div class="container">
+        <img src="assests/nikki-logo.png" alt="Infinity Nikki Logo" class="logo">
+        <!-- <h1>Infinity Nikki</h1> -->
+        <form id="calculator-form">
+            <table>
+                <tr>
+                    <td><label for="current-value">Current Value:</label></td>
+                    <td><input type="number" id="current-value" placeholder="Enter current value, default 0" required></td>
+                </tr>
+                <tr>
+                    <td><label for="target-value">Target Value:</label></td>
+                    <td><input type="number" id="target-value" placeholder="Enter target value, default 350" required></td>
+                </tr>
+            </table>
+
+            <p style="font-size: 12px">NOTE: Increment Interval 5 minutes</p>
+
+            <div class="buttons">
+                <button type="button" class="btn-calculate" onclick="calculateTargetTime()">Calculate</button>
+                <button type="button" class="btn-clear" onclick="clearForm()">Clear</button>
+                <!-- <button type="button" class="btn-close" onclick="closeApp()">Close</button> -->
+            </div>
+        </form>
+
+        <div class="output" id="output"><h3>Target Time: 00 Hr(s) 00 Min(s)</h3></div>
+    </div>
+</body>
+<footer>
+    <script src="script.js"></script>
+    <p>&copy; 2024 Infinity Nikki, Utility fanmade</p>
+</footer>
+</html>
