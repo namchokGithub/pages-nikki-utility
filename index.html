@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Target Time Calculator</title>
+    <title>Infinity Nikki Utility</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="assets/nikkicon.ico">
     <button id="theme-toggle" class="theme-button dark"><img src="assets/day-and-night.png" style="width: 30px;"></button>
@@ -15,37 +15,49 @@
         <form id="calculator-form">
             <table>
                 <tr>
-                    <td><label for="current-value">Current Value:</label></td>
-                    <td><input type="number" id="current-value" placeholder="Enter current value, default 0" required></td>
+                    <td>
+                        <label for="current-value">Current Value:</label>
+                    </td>
+                    <td>
+                        <input type="number" id="current-value" placeholder="Enter current value, default 0" required>
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="349" value="0" class="slider" id="current-value-range">
+                        </div>
+                    </td>
                 </tr>
-                <!-- <tr>
-                    <div class="slidecontainer">
-                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                        <p>Value: <span id="demo"></span></p>
-                    </div>
-                </tr> -->
                 <tr>
                     <td><label for="target-value">Target Value:</label></td>
-                    <td><input type="number" id="target-value" placeholder="Enter target value, default 350" required></td>
+                    <td>
+                        <input type="number" id="target-value" placeholder="Enter target value, default 350" required>
+                        <div class="slidecontainer">
+                            <input type="range" min="1" max="350" value="0" class="slider" id="target-value-range">
+                        </div>
+                    </td>
                 </tr>
-                <!-- <tr>
-                    <div class="slidecontainer">
-                        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
-                        <p>Value: <span id="demo"></span></p>
-                    </div>
-                </tr> -->
             </table>
 
-            <p style="font-size: 12px">NOTE: Increment Interval 5 minutes</p>
-            <p id="current-time" style="font-size: 10px; text-align: center; margin-top: 10px;"></p>
+            <p id="current-time"></p>
+            <p class="note">NOTE: Stamina increments every 5 minutes.</p>
 
             <div class="buttons">
                 <button type="button" class="btn-calculate" onclick="calculateTargetTime()">Calculate</button>
-                <button type="button" class="btn-clear" onclick="clearForm()">Clear</button>
-                <!-- <button type="button" class="btn-close" onclick="closeApp()">Close</button> -->
+                <button type="button" class="btn-clear disabled" id="btn-clear" onclick="clearForm()">Clear</button>
+                <button type="button" class="btn-close" onclick="closeApp()">Close</button>
             </div>
         </form>
-        <div class="output" id="output"><h3>Target Time: 00 Hr(s) 00 Min(s)</h3></div>
+        <div class="output" id="output">
+            <p class="total-time">
+                Total Time: [ 00
+                <span class="time-unit">Hr(s)</span>
+                00
+                <span class="time-unit">Min(s)</span> ]
+            </p>
+            <h2>
+                <span class="hour-count-down">00</span> <span class="time-unit">Hr(s)</span>
+                <span class="min-count-down">00</span> <span class="time-unit">Min(s)</span>
+                <span class="sec-count-down">00</span> <span class="time-unit">Sec(s)</span>
+            </h2>
+        </div>
     </div>
 </body>
 <div class="image-container">
